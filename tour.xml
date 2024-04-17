@@ -17,7 +17,7 @@
 		onloaded="on_intro_loaded()"
 		onclick="on_intro_click()">
 		<layer name="intro_logo"
-			url="/skin/logo.png"
+			url="skin/logo.png"
 			align="center"
 			y="-70"
 			scale="0.2"
