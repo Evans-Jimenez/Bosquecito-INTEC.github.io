@@ -140,7 +140,7 @@
 	<scene name="scene_01" title="Inicio" onstart=""
 		havevrimage.mobilevr="false" havevrimage.no-mobilevr="true"
 		thumburl="panos/01.tiles/thumb.jpg" lat="18.48767222" lng="-69.96385833" alt="24.29"
-		heading="0.0" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
+		heading="0.0">
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
 		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
