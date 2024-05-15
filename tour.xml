@@ -1,6 +1,6 @@
 ﻿<krpano version="1.21" title="Bosquecito INTEC" showerrors="false" debugmode="true">
 
-	<include url="skin/vtourskin.xml" />
+	<include url="../skin/vtourskin.xml" />
 	<include url="%VIEWER%/plugins/webvr.xml" />
 
 	<layer name="intro"
