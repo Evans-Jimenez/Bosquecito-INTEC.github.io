@@ -1,4 +1,5 @@
-﻿<krpano version="1.21" title="Bosquecito INTEC" showerrors="false" debugmode="true">
+﻿<!-- Version 1.5 -->
+<krpano version="1.21" title="Bosquecito INTEC" showerrors="false" debugmode="true">
 
 	<include url="skin/vtourskin.xml" />
 	<include url="%VIEWER%/plugins/webvr.xml" />
@@ -38,6 +39,33 @@
 	<layer name="creditos" url="recursos/Creditos_Bosquecito.png" keep="true" enabled="true" align="centercenter" x="0" y="0" visible="false" alpha="1" scale="0.6" scale.mobile="0.2" onclick="set(layer[creditos].visible,false);"/>
 	<layer name="botoncreditos" url="recursos/botoncreditos.png" keep="true" enabled="true" align="leftbottom" x="10" y="5" scale="0.4" scale.mobile="0.2" onclick="set(layer[creditos].visible,true);"/>
 	<action name="flyout_hotspot"> for(set(i,0), i LT hotspot.count, inc(i), copy(hs, hotspot[get(i)]); if(hs.name != name AND hs.style == 'flyoutimage' AND (hs.flying_state == 'out' OR hs.flying_state == 'flyingout'), callwith(hs, flyout_hotspot() ); ); ); if(flying_state == 'flyingout', set(flying_state, 'flyingin'); , if(flying_state == 'flyingin', set(flying_state, 'flyingout'); ); ); if(flying_state == 'in', calc(backup_state, '0.0|' + rx + '|' + ry + '|' + rz + '|' + scale); copy(backup_zorder, zorder); set(flying_state, 'flyingout'); ); if(flying_state == 'out', set(flying_state, 'flyingin'); ); if(flying_state == 'flyingout', set(zorder, 99); tween(alpha, 1,2); tween(flying|rx|ry|rz|scale, '0.0|0.0|0.0|0.0|1.0',2, default, set(flying_state,'out'); set(capture,true); ); ); if(flying_state == 'flyingout' AND webvr.isenabled, set(zorder, 99); tween(alpha, 1 ,2); tween(flying|rx|ry|rz|scale, '1.0|0.0|0.0|0.0|0.3',2, default, set(flying_state,'in'); set(capture,true); ); delayedcall(6.0, set(visible, false); ); ); if(flying_state == 'flyingin', sub(zorder,1); tween(alpha, 0 ,2); set(capture,false); tween(flying|rx|ry|rz|scale, get(backup_state), 1, default, set(flying_state,'in'); copy(zorder,backup_zorder); ); ); if(flying_state == 'flyingin' AND webvr.isenabled, sub(zorder,1); tween(alpha, 0 ,2); set(capture,false); tween(flying|rx|ry|rz|scale, get(backup_state), 1, default, set(flying_state,'in'); copy(zorder,backup_zorder); ); ); </action>
+
+	<action name="do_crop_animation" scope="local" args="framewidth, frameheight, framerate">
+		<!-- define local variables -->
+		calc(local.xframes, (caller.imagewidth /framewidth) BOR 0);
+		calc(local.frames, xframes * ((caller.imageheight / frameheight) BOR 0));
+		def(local.frame, integer, 0);
+		
+		<!-- set the first frame -->
+		calc(caller.crop, '0|0|' + framewidth + '|' + frameheight);
+		
+		<!-- do the animation -->
+		setinterval(calc('crop_anim_' + caller.name), calc(1.0 / framerate),
+			if(caller.loaded,
+				inc(frame);
+				if(frame GE frames, if(caller.onlastframe !== null, callwith(caller, onlastframe() ) ); set(frame,0); );
+				mod(xpos, frame, xframes);
+				div(ypos, frame, xframes);
+				Math.floor(ypos);
+				mul(xpos, framewidth);
+				mul(ypos, frameheight);
+				calc(caller.crop, xpos + '|' + ypos + '|' + framewidth + '|' + frameheight);
+			  ,
+				<!-- stop the interval when the hotspot gets removed -->
+				clearinterval(calc('crop_anim_' + caller.name));
+			);
+		);
+	</action>
 
 	<action name="on_intro_click">
 		tween(layer[intro].alpha, 0);
@@ -160,9 +188,10 @@
 			<cube url="panos/01.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-12.327" atv="24.050"
-			linkedscene="scene_02" linkedscene_lookat="8.91,0.48,120.0" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="70.042" atv="5.843"
+		<!-- <hotspot name="spot1" style="skin_target" ath="-12.327" atv="24.050"
+			linkedscene="scene_02" linkedscene_lookat="8.91,0.48,120.0" /> -->
+		<hotspot name="spot1" style="skin_target" ath="-12.327" atv="24.050" linkedscene="scene_02" linkedscene_lookat="8.91,0.48,120.0"/>
+		<hotspot name="spot2" style="skin_target" ath="70.042" atv="5.843"
 			linkedscene="scene_09" linkedscene_lookat="-195.74,-5.91,120.0" />
 
 		<action name="ocultar">
@@ -212,9 +241,9 @@
 			<cube url="panos/02.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="146.167" atv="3.135"
+		<hotspot name="spot1" style="skin_target" ath="146.167" atv="3.135"
 			linkedscene="scene_01" linkedscene_lookat="180.6,6.28,120.0" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="7.251" atv="12.245"
+		<hotspot name="spot2" style="skin_target" ath="7.251" atv="12.245"
 			linkedscene="scene_03" linkedscene_lookat="-14.14,3.49,120.0" />
 
 	</scene>
@@ -238,9 +267,9 @@
 			<cube url="panos/03-01.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-146.142" atv="5.346"
+		<hotspot name="spot1" style="skin_target" ath="-146.142" atv="5.346"
 			linkedscene="scene_03" linkedscene_lookat="145.04,0.8,120.0" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="153.586" atv="8.385"
+		<hotspot name="spot2" style="skin_target" ath="153.586" atv="8.385"
 			linkedscene="scene_04" linkedscene_lookat="45.1,-2.7,120.0" />
 
 	</scene>
@@ -264,11 +293,11 @@
 			<cube url="panos/03.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-0.729" atv="11.236"
+		<hotspot name="spot1" style="skin_target" ath="-0.729" atv="11.236"
 			linkedscene="scene_04" linkedscene_lookat="-8.1,-0.16,120.0" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-70.695" atv="9.630"
+		<hotspot name="spot2" style="skin_target" ath="-70.695" atv="9.630"
 			linkedscene="scene_03-01" linkedscene_hoffset="0.0" use3dtransition="true" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="178.441" atv="8.990"
+		<hotspot name="spot3" style="skin_target" ath="178.441" atv="8.990"
 			linkedscene="scene_02" linkedscene_lookat="151.45,-10.44,120.0" />
 
 	</scene>
@@ -292,11 +321,11 @@
 			<cube url="panos/04.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="4.712" atv="14.086"
+		<hotspot name="spot1" style="skin_target" ath="4.712" atv="14.086"
 			linkedscene="scene_05" linkedscene_hoffset="0.0" use3dtransition="true" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-142.757" atv="8.529"
+		<hotspot name="spot2" style="skin_target" ath="-142.757" atv="8.529"
 			linkedscene="scene_03-01" linkedscene_lookat="-22.36,-1.27,120.0" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="151.508" atv="14.272"
+		<hotspot name="spot3" style="skin_target" ath="151.508" atv="14.272"
 			linkedscene="scene_03" linkedscene_lookat="188.32,2.23,120.0" />
 
 	</scene>
@@ -320,9 +349,9 @@
 			<cube url="panos/05.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="3.909" atv="3.408"
+		<hotspot name="spot1" style="skin_target" ath="3.909" atv="3.408"
 			linkedscene="scene_06" linkedscene_lookat="-26.21,-11.28,120.0" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-130.011" atv="22.180"
+		<hotspot name="spot2" style="skin_target" ath="-130.011" atv="22.180"
 			linkedscene="scene_04" linkedscene_lookat="-132.16,3.11,120.0" />
 
 	</scene>
@@ -346,9 +375,9 @@
 			<cube url="panos/06.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="2.377" atv="2.662"
+		<hotspot name="spot1" style="skin_target" ath="2.377" atv="2.662"
 			linkedscene="scene_07" linkedscene_lookat="-115.19,-2.29,120.0" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="96.759" atv="12.716"
+		<hotspot name="spot2" style="skin_target" ath="96.759" atv="12.716"
 			linkedscene="scene_05" linkedscene_lookat="-167.93,-6.2,120.0" />
 
 	</scene>
@@ -372,13 +401,13 @@
 			<cube url="panos/07.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-161.625" atv="7.582"
+		<hotspot name="spot1" style="skin_target" ath="-161.625" atv="7.582"
 			linkedscene="scene_08" linkedscene_lookat="-166.64,-12.82,120.0" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-10.974" atv="5.757"
+		<hotspot name="spot2" style="skin_target" ath="-10.974" atv="5.757"
 			linkedscene="scene_09" linkedscene_lookat="-51.58,0.32,120.0" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="92.960" atv="8.667"
+		<hotspot name="spot3" style="skin_target" ath="92.960" atv="8.667"
 			linkedscene="scene_06" linkedscene_lookat="-147.25,0.65,120.0" />
-		<hotspot name="spot4" style="skin_hotspotstyle" ath="160.370" atv="6.719"
+		<hotspot name="spot4" style="skin_target" ath="160.370" atv="6.719"
 			linkedscene="scene_11" linkedscene_lookat="28.47,0.8,120.0" />
 
 	</scene>
@@ -402,9 +431,9 @@
 			<cube url="panos/08.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="20.673" atv="7.384"
+		<hotspot name="spot1" style="skin_target" ath="20.673" atv="7.384"
 			linkedscene="scene_07" linkedscene_lookat="63.04,4.76,120.0" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="97.017" atv="10.532"
+		<hotspot name="spot2" style="skin_target" ath="97.017" atv="10.532"
 			linkedscene="scene_11" linkedscene_lookat="-13.18,-13.18,120.0" />
 
 	</scene>
@@ -428,9 +457,9 @@
 			<cube url="panos/09.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="129.348" atv="5.505"
+		<hotspot name="spot1" style="skin_target" ath="129.348" atv="5.505"
 			linkedscene="scene_07" linkedscene_lookat="187.26,3.58,120.0" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-8.614" atv="-1.329"
+		<hotspot name="spot2" style="skin_target" ath="-8.614" atv="-1.329"
 			linkedscene="scene_01" linkedscene_lookat="-138.35,-6.66,120.0" />
 
 	</scene>
@@ -454,11 +483,11 @@
 			<cube url="panos/10.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="0.525" atv="7.951"
+		<hotspot name="spot1" style="skin_target" ath="0.525" atv="7.951"
 			linkedscene="scene_12" linkedscene_lookat="30.98,-7.46,120.0" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="115.730" atv="15.812"
+		<hotspot name="spot2" style="skin_target" ath="115.730" atv="15.812"
 			linkedscene="scene_08" linkedscene_lookat="-61.08,-14.16,120.0" />
-		<hotspot name="spot3" style="skin_hotspotstyle" ath="-166.554" atv="8.726"
+		<hotspot name="spot3" style="skin_target" ath="-166.554" atv="8.726"
 			linkedscene="scene_07" linkedscene_lookat="-7.14,-3.01,120.0" />
 
 	</scene>
@@ -482,9 +511,9 @@
 			<cube url="panos/11.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-8.435" atv="11.070"
+		<hotspot name="spot1" style="skin_target" ath="-8.435" atv="11.070"
 			linkedscene="scene_12" linkedscene_lookat="166.03,-15.16,120.0" />
-		<hotspot name="spot2" style="skin_hotspotstyle" ath="-155.116" atv="-1.357"
+		<hotspot name="spot2" style="skin_target" ath="-155.116" atv="-1.357"
 			linkedscene="scene_10" linkedscene_lookat="-148.69,-3.35,120.0" />
 
 	</scene>
@@ -508,7 +537,7 @@
 			<cube url="panos/12.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_hotspotstyle" ath="-34.598" atv="-4.543"
+		<hotspot name="spot1" style="skin_target" ath="-34.598" atv="-4.543"
 			linkedscene="scene_11" linkedscene_lookat="207.65,-8.76,120.0" />
 
 	</scene>
