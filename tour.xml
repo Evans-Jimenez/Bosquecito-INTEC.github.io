@@ -457,7 +457,7 @@
 		</image>
 
 		<hotspot name="spot1" style="skin_target" ath="0.525" atv="7.951"
-			linkedscene="scene_12" linkedscene_lookat="30.98,-7.46,120.0" />
+			linkedscene="scene_11" linkedscene_lookat="30.98,-7.46,120.0" />
 		<hotspot name="spot2" style="skin_target" ath="115.730" atv="15.812"
 			linkedscene="scene_08" linkedscene_lookat="-61.08,-14.16,120.0" />
 		<hotspot name="spot3" style="skin_target" ath="-166.554" atv="8.726"
