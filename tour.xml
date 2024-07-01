@@ -434,6 +434,34 @@
 			linkedscene="scene_07" linkedscene_lookat="187.26,3.58,120.0" />
 		<hotspot name="spot2" style="skin_target" ath="-8.614" atv="-1.329"
 			linkedscene="scene_01" linkedscene_lookat="-138.35,-6.66,120.0" />
+			<hotspot name="info"
+			type="image"
+			url="recursos/punto_inf.png"
+			ath="-134.9850237"
+			atv="-20.5752897"
+			scale="0.111400"
+			depth="1000"
+			rx="0" ry="0" rz="0"
+			ox="0.0" oy="0.0"
+			tx="0" ty="0" tz="0"
+			distorted="true"
+			onclick="tween(hotspot[image_text].alpha, 1, 0.5); set(hotspot[image_text].enabled, true);" />
+		<hotspot name="image_text"
+			type="image"
+			url="recursos/Informacion_provisional.png"
+			ath="-134.9850237"
+			atv="-20.5752897"
+			scale="0.53000000000000"
+			depth="1000"
+			rx="0" ry="0" rz="0"
+			ox="0.0" oy="0.0"
+			tx="0" ty="0" tz="0"
+			alpha="0"
+			enabled="false"
+			distorted="true"
+			onclick="tween(hotspot[image_text].alpha, 0, 0.5); set(hotspot[image_text].enabled, false);" />
+		<hotspot name="spot3" style="skin_target" ath="-173.7620635" atv="6.35618758101764"
+			linkedscene="scene_13" linkedscene_lookat="-170.40428233, 8.62724295 ,120.0" />
 
 	</scene>
 
@@ -512,6 +540,36 @@
 
 		<hotspot name="spot1" style="skin_target" ath="-34.598" atv="-4.543"
 			linkedscene="scene_11" linkedscene_lookat="207.65,-8.76,120.0" />
+
+	</scene>
+	<scene name="scene_13" title="13" onstart="" havevrimage.mobilevr="false"
+		havevrimage.no-mobilevr="true" thumburl="panos/13.tiles/thumb.jpg" lat="" lng="" alt=""
+		heading="" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
+
+		<control bouncinglimits="calc:image.cube ? true : false" />
+
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
+			fovmax="140" limitview="auto" />
+
+		<preview url="panos/13.tiles/preview.jpg" />
+
+		<image if="!(webvr.isenabled OR device.mobilevr)">
+			<cube url="panos/13.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664" />
+		</image>
+
+		<image if="webvr.isenabled OR device.mobilevr">
+			<cube url="panos/13.tiles/vr/pano_%s.jpg" />
+		</image>
+
+		<hotspot name="spot1" style="skin_target" ath="70.85178908030707"
+			atv="12.36532876894557"
+			linkedscene="scene_09" linkedscene_lookat="72.74931862,4.24863753,120.0" />
+		<hotspot name="spot2" style="skin_target" ath="149.45161313990138"
+			atv="9.30326602958909"
+			linkedscene="scene_07" linkedscene_lookat="151.07305120,0.62322084,120.0" />
+		<hotspot name="spot3" style="skin_target" ath="-159.03616403832774"
+			atv="3.71149191379780"
+			linkedscene="scene_08" linkedscene_lookat="-163.53412353,-4.42158433,120.0" />
 
 	</scene>
 
