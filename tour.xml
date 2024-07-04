@@ -442,7 +442,7 @@
 			linkedscene="scene_01" linkedscene_lookat="-138.35,-6.66,120.0" />
 			<hotspot name="info"
 			type="image"
-			url="recursos/punto_inf_2.png"
+			url="recursos/punto_info.png"
 			ath="-134.9850237"
 			atv="-20.5752897"
 			scale="1"
