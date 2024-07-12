@@ -379,12 +379,11 @@
 		<hotspot name="spot2" style="skin_target" ath="-10.974" atv="5.757"
 			linkedscene="scene_09" linkedscene_lookat="-51.58,0.32,120.0" />
 		<hotspot name="spot3" style="skin_target" ath="92.960" atv="8.667"
-			linkedscene="scene_06" linkedscene_lookat="-147.25,0.65,120.0" />
+			linkedscene="scene_06" linkedscene_lookat="92.960,8.667,120.0" />
 		<hotspot name="spot4" style="skin_target" ath="160.370" atv="6.719"
-			linkedscene="scene_10" linkedscene_lookat="28.47,0.8,120.0" />
-			<hotspot name="spot5" style="skin_target" ath="-68.75250555378682"
-			atv="7.22218739316025"
-			linkedscene="scene_13" linkedscene_lookat="-170.40428233, 8.62724295 ,120.0" />
+			linkedscene="scene_10" linkedscene_lookat="160.370,6.719,120.0" />
+		<hotspot name="spot5" style="skin_target" ath="-68.752" atv="7.222"
+			linkedscene="scene_13" linkedscene_lookat="-68.752, 7.222 ,120.0" />
 
 	</scene>
 
