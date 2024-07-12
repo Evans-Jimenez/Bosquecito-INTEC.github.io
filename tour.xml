@@ -440,7 +440,7 @@
 			linkedscene="scene_07" linkedscene_lookat="187.26,3.58,120.0" />
 		<hotspot name="spot2" style="skin_target" ath="-8.614" atv="-1.329"
 			linkedscene="scene_01" linkedscene_lookat="-138.35,-6.66,120.0" />
-			<hotspot name="info"
+		<!-- <hotspot name="info"
 			type="image"
 			url="recursos/punto_info.png"
 			ath="-134.9850237"
@@ -465,7 +465,8 @@
 			alpha="0"
 			enabled="false"
 			distorted="true"
-			onclick="tween(hotspot[image_text].alpha, 0, 0.5); set(hotspot[image_text].enabled, false);" />
+			onclick="tween(hotspot[image_text].alpha, 0, 0.5); set(hotspot[image_text].enabled, false);" /> -->
+		
 		<hotspot name="spot3" style="skin_target" ath="-173.7620635" atv="6.35618758101764"
 			linkedscene="scene_13" linkedscene_lookat="-170.40428233, 8.62724295 ,120.0" />
 
