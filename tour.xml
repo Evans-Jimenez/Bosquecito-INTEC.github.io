@@ -383,7 +383,7 @@
 		<hotspot name="spot4" style="skin_target" ath="160.370" atv="6.719"
 			linkedscene="scene_10" linkedscene_lookat="160.370,6.719,120.0" />
 		<hotspot name="spot5" style="skin_target" ath="-68.752" atv="7.222"
-			linkedscene="scene_13" linkedscene_lookat="-68.752, 7.222 ,120.0" />
+			linkedscene="scene_13" linkedscene_lookat="-168.752, 7.222 ,120.0" />
 
 	</scene>
 
@@ -467,7 +467,7 @@
 			onclick="tween(hotspot[image_text].alpha, 0, 0.5); set(hotspot[image_text].enabled, false);" /> -->
 		
 		<hotspot name="spot3" style="skin_target" ath="-173.7620635" atv="6.35618758101764"
-			linkedscene="scene_13" linkedscene_lookat="-170.40428233, 8.62724295 ,120.0" />
+			linkedscene="scene_13" linkedscene_lookat="-173.7620635, 6.35618758101764 ,120.0" />
 
 	</scene>
 
