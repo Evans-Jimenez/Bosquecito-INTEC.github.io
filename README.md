@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Este proyecto consiste en un tour virtual interactivo de las diferentes áreas del bosquecito del Instituto Tecnologico de Santo Domingo. Está diseñado para proporcionar a los usuarios una experiencia inmersiva sobre esta localizacion dentro del centro educativo.
+Este proyecto consiste en un tour virtual interactivo de las diferentes áreas del bosquecito del Instituto Tecnologico de Santo Domingo (INTEC). Está diseñado para proporcionar a los usuarios una experiencia inmersiva sobre esta localizacion dentro del centro educativo.
 
 ## Funcionalidades
 
