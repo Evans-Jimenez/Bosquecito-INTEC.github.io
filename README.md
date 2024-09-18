@@ -7,7 +7,7 @@ Este proyecto consiste en un tour virtual interactivo de las diferentes áreas d
 ## Funcionalidades
 
 - Navegación interactiva por las distintas áreas del bosquecito.
-- Visualización 360º de las instalaciones.
+- Visualización 360º de la zona.
 - Optimización para dispositivos móviles y de escritorio.
 
 ## Tecnologías Utilizadas
