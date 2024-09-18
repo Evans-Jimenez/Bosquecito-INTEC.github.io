@@ -1,4 +1,4 @@
-# Tour Virtual del Bosquecito
+# Tour Virtual del Bosquecito _(INTEC)_
 
 ## Descripción
 
