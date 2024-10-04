@@ -26,8 +26,13 @@ Este proyecto consiste en un tour virtual interactivo de las diferentes áreas d
 1. Al iniciar el tour, el usuario será dirigido a la **vista principal** del bosquecito.
 2. Para navegar entre las distintas áreas, haga clic en los **hotspots** que aparecen en la pantalla.
 
+### Próximos Pasos
+- Mejorar la forma por la cual se realiza las transiciones de una escena a otra.
+- Mejorar la calidad de las fotos (dicho de mejor forma, mejorar la localización de estas para mejorar la vista del recorrido.)
+- Optimizar el rendimiento del tour.
+
 ## Créditos
 
-- **Desarrollo**: Evans Jimenez
+- **Desarrollo**: Evans Jiménez
 - **Lugar**: Bosquecito INTEC
 - **Coordinadora**: Jeannette Chaljub
