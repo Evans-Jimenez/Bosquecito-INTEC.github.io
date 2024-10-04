@@ -58,6 +58,19 @@
 		);
 	</action>
 
+	<action name="preloadscenes">
+        <foreach item="scene" array="scenes">
+            <loadscene onloaded="if(!scene.isloaded) { scene.load(); }" />
+        </foreach>
+    </action>
+
+    <events>
+        <onload>
+            <!-- Llama a la acción de precarga cuando se carga la panorámica -->
+            preloadscenes();
+        </onload>
+    </events>
+
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
 	 <skin_settings maps="true"
 		maps_type="google"
