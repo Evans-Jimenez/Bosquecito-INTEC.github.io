@@ -381,8 +381,8 @@
 			linkedscene="scene_06" linkedscene_lookat="92.960,8.667,120.0" />
 		<hotspot name="spot4" style="skin_target" ath="160.391" atv="6.746"
 			linkedscene="scene_10" linkedscene_lookat="12.73,-7.44,124.85" />
-		<hotspot name="spot5" style="skin_target" ath="-68.767" atv="7.275"
-			linkedscene="scene_13" linkedscene_lookat="-387.78,-11.71,120.0" />
+		<!-- <hotspot name="spot5" style="skin_target" ath="-68.767" atv="7.275"
+			linkedscene="scene_13" linkedscene_lookat="-387.78,-11.71,120.0" /> -->
 
 	</scene>
 
@@ -409,9 +409,9 @@
 			linkedscene="scene_07" linkedscene_lookat="40.73,0.11,120.0" />
 		<hotspot name="spot2" style="skin_target" ath="89.011" atv="10.739"
 			linkedscene="scene_10" linkedscene_lookat="-37.45,-1.34,120.0" />
-			<hotspot name="spot3" style="skin_target" ath="-23.776"
+			<!-- <hotspot name="spot3" style="skin_target" ath="-23.776"
 			atv="3.651"
-			linkedscene="scene_13" linkedscene_lookat="5.22271913, -5.07959526 ,120.0" />
+			linkedscene="scene_13" linkedscene_lookat="5.22271913, -5.07959526 ,120.0" /> -->
 
 	</scene>
 
@@ -465,8 +465,8 @@
 			distorted="true"
 			onclick="tween(hotspot[image_text].alpha, 0, 0.5); set(hotspot[image_text].enabled, false);" /> -->
 		
-		<hotspot name="spot3" style="skin_target" ath="-173.770" atv="6.388"
-			linkedscene="scene_13" linkedscene_lookat="-97.59,-17.1,120.0" />
+		<!-- <hotspot name="spot3" style="skin_target" ath="-173.770" atv="6.388"
+			linkedscene="scene_13" linkedscene_lookat="-97.59,-17.1,120.0" /> -->
 
 	</scene>
 
@@ -547,7 +547,7 @@
 			linkedscene="scene_11" linkedscene_lookat="207.65,-8.76,120.0" />
 
 	</scene>
-	<scene name="scene_13" title="13" onstart="" havevrimage.mobilevr="false"
+	<!-- <scene name="scene_13" title="13" onstart="" havevrimage.mobilevr="false"
 		havevrimage.no-mobilevr="true" thumburl="panos/13.tiles/thumb.jpg" lat="" lng="" alt=""
 		heading="" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
 
@@ -576,7 +576,7 @@
 			atv="3.711"
 			linkedscene="scene_08" linkedscene_lookat="-200.37,-9.78,120.0" />
 
-	</scene>
+	</scene> -->
 
 
 </krpano>
