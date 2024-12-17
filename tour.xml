@@ -1,38 +1,13 @@
 ﻿<!-- Version 1.6.1 -->
 <krpano version="1.21" title="Bosquecito INTEC" showerrors="false" debugmode="true">
-		<include url="skin/vtourskin.xml" />
+	<include url="skin/vtourskin.xml" />
 	<include url="%VIEWER%/plugins/webvr.xml" />
+	<plugin name="toolbox" url="plugins/toolbox/toolboxV2.js" keep="true" visible="false" align="lefttop" zorder="10"/>
 
-	<layer name="intro"
-		type="container"
-		keep="true"
-		width="100%"
-		height="100%"
-		bgcolor="0x000000"
-		bgalpha="0.8"
-		zorder="9999"
-		enabled="true"
-		bgcapture="true"
-		vr="true"
-		onloaded="on_intro_loaded()"
-		onclick="on_intro_click()">
-		<layer name="intro_logo"
-			url="skin/logo.png"
-			align="center"
-			y="-70"
-			scale="0.2"
-			enabled="false"
-			alpha="0"
-			vr="true"
-		/>
-		<layer name="intro_guide"
-			url="skin/help_desktop.png"
-			align="center" y="80"
-			scale="1"
-			enabled="false"
-			alpha="0"
-			vr="true"
-		/>
+
+	<layer name="intro" type="container" keep="true" width="100%" height="100%" bgcolor="0x000000" bgalpha="0.8" zorder="9999" enabled="true" bgcapture="true" vr="true" onloaded="on_intro_loaded()" onclick="on_intro_click()">
+		<layer name="intro_logo" url="skin/logo.png" align="center" y="-70" scale="0.2" enabled="false" alpha="0" vr="true" />
+		<layer name="intro_guide" url="skin/help_desktop.png" align="center" y="80" scale="1" enabled="false" alpha="0" vr="true" />
 	</layer>
 
 	<layer name="creditos" url="recursos/Creditos_Bosquecito.png" keep="true" enabled="true" align="centercenter" x="0" y="0" visible="false" alpha="1" scale="0.6" scale.mobile="0.2" onclick="set(layer[creditos].visible,false);"/>
@@ -58,97 +33,30 @@
 	</action>
 
 	<!-- customize skin settings: maps, gyro, webvr, thumbnails, tooltips, layout, design, ... -->
-	 <skin_settings maps="true"
-		maps_type="google"
-		maps_bing_api_key=""
-		maps_google_api_key=""
-		maps_zoombuttons="false"
-		maps_loadonfirstuse="true"
-		gyro="true"
-		gyro_keeplookingdirection="false"
-		webvr="true"
-		webvr_keeplookingdirection="true"
-		webvr_prev_next_hotspots="true"
-		autotour="false"
-		littleplanetintro="true"
-		followmousecontrol="true"
-		title="true"
-		thumbs="false"
-		thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160"
-		thumbs_opened="false"
-		thumbs_text="false"
-		thumbs_dragging="true"
-		thumbs_onhoverscrolling="false"
-		thumbs_scrollbuttons="false"
-		thumbs_scrollindicator="false"
-		thumbs_loop="false"
-		tooltips_buttons="false"
-		tooltips_thumbs="false"
-		tooltips_hotspots="false"
-		tooltips_mapspots="false"
-		deeplinking="false"
-		loadscene_flags="MERGE"
-		loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)"
-		loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)"
-		loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)"
-		loadingtext=""
-		layout_width="100%"
-		layout_maxwidth="814"
-		controlbar_width="-24"
-		controlbar_height="40"
-		controlbar_offset="20"
-		controlbar_offset_closed="-40"
-		controlbar_overlap.no-fractionalscaling="10"
-		controlbar_overlap.fractionalscaling="0"
-		design_skin_images="vtourskin_light.png"
-	               design_bgcolor="0x2D3E50"
-	               design_bgalpha="0.0"
-	               design_bgborder="0,0,1,0 0xFFFFFF 1"
-	               design_bgroundedge="0"
-	               design_bgshadow="0"
-	               design_thumbborder_bgborder="1 0xFFFFFF 0.8"
-	               design_thumbborder_padding="0"
-	               design_thumbborder_bgroundedge="0"
-	               design_text_css="color:#FFFFFF; font-family:Arial; font-weight:lighter;"
-	               design_text_txtshadow="0"
-	/> 
+	<skin_settings maps="true" maps_type="google" maps_bing_api_key="" maps_google_api_key="" maps_zoombuttons="false" maps_loadonfirstuse="true" gyro="true" gyro_keeplookingdirection="false" webvr="true" webvr_keeplookingdirection="true" webvr_prev_next_hotspots="true" autotour="false" littleplanetintro="true" followmousecontrol="true" title="true" thumbs="false" thumbs_width="120" thumbs_height="80" thumbs_padding="10" thumbs_crop="0|40|240|160" thumbs_opened="false" thumbs_text="false" thumbs_dragging="true" thumbs_onhoverscrolling="false" thumbs_scrollbuttons="false" thumbs_scrollindicator="false" thumbs_loop="false" tooltips_buttons="false" tooltips_thumbs="false" tooltips_hotspots="false" tooltips_mapspots="false" deeplinking="false" loadscene_flags="MERGE" loadscene_blend="OPENBLEND(0.5, 0.0, 0.75, 0.05, linear)" loadscene_blend_prev="SLIDEBLEND(0.5, 180, 0.75, linear)" loadscene_blend_next="SLIDEBLEND(0.5,   0, 0.75, linear)" loadingtext="" layout_width="100%" layout_maxwidth="814" controlbar_width="-24" controlbar_height="40" controlbar_offset="20" controlbar_offset_closed="-40" controlbar_overlap.no-fractionalscaling="10" controlbar_overlap.fractionalscaling="0" design_skin_images="vtourskin_light.png" design_bgcolor="0x2D3E50" design_bgalpha="0.0" design_bgborder="0,0,1,0 0xFFFFFF 1" design_bgroundedge="0" design_bgshadow="0" design_thumbborder_bgborder="1 0xFFFFFF 0.8" design_thumbborder_padding="0" design_thumbborder_bgroundedge="0" design_text_css="color:#FFFFFF; font-family:Arial; font-weight:lighter;" design_text_txtshadow="0" />
 
 	<!--
 	    For an alternative skin design either change the <skin_settings> values 
 	    from above or optionally include one of the predefined designs from below.
 	-->
-	<!-- <include url="skin/vtourskin_design_flat_light.xml"  /> -->
-	<!-- <include url="skin/vtourskin_design_glass.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_flat_light.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_glass.xml" /> -->
 	<!-- <include url="skin/vtourskin_design_ultra_light.xml" /> -->
-	<!-- <include url="skin/vtourskin_design_117.xml"         /> -->
-	<!-- <include url="skin/vtourskin_design_117round.xml"    /> -->
-	<!-- <include url="skin/vtourskin_design_black.xml"       /> -->
+	<!-- <include url="skin/vtourskin_design_117.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_117round.xml" /> -->
+	<!-- <include url="skin/vtourskin_design_black.xml" /> -->
 
 	<!-- nadir logo (a distorted hotspot) -->
-	<hotspot name="nadirlogo" keep="true"
-		url="vtourskin_nadir2.png"
-		ath="0"
-		atv="90"
-		distorted="true"
-		scale="3.5"
-		rotate="0.0"
-		alpha="0.9"
-		onclick="openurl('https://refodige.intec.edu.do/');"
-	/>
+	<hotspot name="nadirlogo" keep="true" url="vtourskin_nadir2.png" ath="0" atv="90" distorted="true" scale="3.5" rotate="0.0" alpha="0.9" onclick="openurl('https://refodige.intec.edu.do/');" />
 
 	<!-- onviewchange event - update logo rotation on pano rotation -->
-	<events name="nadirlogo" keep="true"
-		onviewchange="copy(hotspot[nadirlogo].rotate, view.hlookat);" />
+	<events name="nadirlogo" keep="true" onviewchange="copy(hotspot[nadirlogo].rotate, view.hlookat);" />
 
 
-	<scene name="scene_01" title="Inicio" onstart=""
-		havevrimage.mobilevr="false" havevrimage.no-mobilevr="true"
-		thumburl="panos/01.tiles/thumb.jpg" lat="18.48767222" lng="-69.96385833" alt="24.29"
-		heading="0.0">
+	<scene name="scene_01" title="Inicio" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/01.tiles/thumb.jpg" lat="18.48767222" lng="-69.96385833" alt="24.29" heading="0.0">
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
-			fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/01.tiles/preview.jpg" />
 
@@ -160,11 +68,9 @@
 			<cube url="panos/01.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<!-- <hotspot name="spot1" style="skin_target" ath="-12.327" atv="24.050"
-			linkedscene="scene_02" linkedscene_lookat="8.91,0.48,120.0" /> -->
+		<!-- <hotspot name="spot1" style="skin_target" ath="-12.327" atv="24.050" linkedscene="scene_02" linkedscene_lookat="8.91,0.48,120.0" /> -->
 		<hotspot name="spot1" style="skin_target" ath="-12.327" atv="24.050" linkedscene="scene_02" linkedscene_lookat="8.91,0.48,120.0"/>
-		<hotspot name="spot2" style="skin_target" ath="70.042" atv="5.843"
-			linkedscene="scene_09" linkedscene_lookat="-195.74,-5.91,120.0" />
+		<hotspot name="spot2" style="skin_target" ath="70.042" atv="5.843" linkedscene="scene_09" linkedscene_lookat="-195.74,-5.91,120.0" />
 
 		<action name="ocultar">
 			tween(hotspot[Bienvenido].alpha, 0.0, 1.5);
@@ -178,30 +84,16 @@
 		</action>
 
 
-		<hotspot name="Bienvenido"
-			type="image"
-			url="recursos/Introduccion_Bosquecito.png"
-			ath="0"
-			atv="0"
-			depth="1800"
-			rx="0" ry="0" rz="0"
-			ox="0.0" oy="0.0"
-			tx="0" ty="0" tz="0"
-			visible="false"
-			distorted="true"
-			onclick="ocultar();" />
+		<hotspot name="Bienvenido" type="image" url="recursos/Introduccion_Bosquecito.png" ath="0" atv="0" depth="1800" rx="0" ry="0" rz="0" ox="0.0" oy="0.0" tx="0" ty="0" tz="0" visible="false" distorted="true" onclick="ocultar();" />
 
 
 	</scene>
 
-	<scene name="scene_02" title="02" onstart="" havevrimage.mobilevr="false"
-		havevrimage.no-mobilevr="true" thumburl="panos/02.tiles/thumb.jpg" lat="18.48767500"
-		lng="-69.96390000" alt="25.69" heading="0.0" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
+	<scene name="scene_02" title="02" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/02.tiles/thumb.jpg" lat="18.48767500" lng="-69.96390000" alt="25.69" heading="0.0" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
-			fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/02.tiles/preview.jpg" />
 
@@ -213,21 +105,16 @@
 			<cube url="panos/02.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_target" ath="146.167" atv="3.135"
-			linkedscene="scene_01" linkedscene_lookat="180.6,6.28,120.0" />
-		<hotspot name="spot2" style="skin_target" ath="7.251" atv="12.245"
-			linkedscene="scene_03" linkedscene_lookat="-14.14,3.49,120.0" />
+		<hotspot name="spot1" style="skin_target" ath="146.167" atv="3.135" linkedscene="scene_01" linkedscene_lookat="180.6,6.28,120.0" />
+		<hotspot name="spot2" style="skin_target" ath="7.251" atv="12.245" linkedscene="scene_03" linkedscene_lookat="-14.14,3.49,120.0" />
 
 	</scene>
 
-	<scene name="scene_03-01" title="03-01" onstart="" havevrimage.mobilevr="false"
-		havevrimage.no-mobilevr="true" thumburl="panos/03-01.tiles/thumb.jpg" lat="18.48765278"
-		lng="-69.96401111" alt="22.50" heading="0.0" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
+	<scene name="scene_03-01" title="03-01" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/03-01.tiles/thumb.jpg" lat="18.48765278" lng="-69.96401111" alt="22.50" heading="0.0" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
-			fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/03-01.tiles/preview.jpg" />
 
@@ -239,21 +126,16 @@
 			<cube url="panos/03-01.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_target" ath="-146.142" atv="5.346"
-			linkedscene="scene_03" linkedscene_lookat="145.04,0.8,120.0" />
-		<hotspot name="spot2" style="skin_target" ath="153.586" atv="8.385"
-			linkedscene="scene_04" linkedscene_lookat="45.1,-2.7,120.0" />
+		<hotspot name="spot1" style="skin_target" ath="-146.142" atv="5.346" linkedscene="scene_03" linkedscene_lookat="145.04,0.8,120.0" />
+		<hotspot name="spot2" style="skin_target" ath="153.586" atv="8.385" linkedscene="scene_04" linkedscene_lookat="45.1,-2.7,120.0" />
 
 	</scene>
 
-	<scene name="scene_03" title="03" onstart="" havevrimage.mobilevr="false"
-		havevrimage.no-mobilevr="true" thumburl="panos/03.tiles/thumb.jpg" lat="18.48772222"
-		lng="-69.96388889" alt="28.69" heading="0.0" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
+	<scene name="scene_03" title="03" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/03.tiles/thumb.jpg" lat="18.48772222" lng="-69.96388889" alt="28.69" heading="0.0" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
-			fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/03.tiles/preview.jpg" />
 
@@ -265,23 +147,17 @@
 			<cube url="panos/03.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_target" ath="-0.729" atv="11.236"
-			linkedscene="scene_04" linkedscene_lookat="-8.1,-0.16,120.0" />
-		<hotspot name="spot2" style="skin_target" ath="-70.695" atv="9.630"
-			linkedscene="scene_03-01" linkedscene_hoffset="0.0" use3dtransition="true" />
-		<hotspot name="spot3" style="skin_target" ath="178.441" atv="8.990"
-			linkedscene="scene_02" linkedscene_lookat="151.45,-10.44,120.0" />
+		<hotspot name="spot1" style="skin_target" ath="-0.729" atv="11.236" linkedscene="scene_04" linkedscene_lookat="-8.1,-0.16,120.0" />
+		<hotspot name="spot2" style="skin_target" ath="-70.695" atv="9.630" linkedscene="scene_03-01" linkedscene_hoffset="0.0" use3dtransition="true" />
+		<hotspot name="spot3" style="skin_target" ath="178.441" atv="8.990" linkedscene="scene_02" linkedscene_lookat="151.45,-10.44,120.0" />
 
 	</scene>
 
-	<scene name="scene_04" title="04" onstart="" havevrimage.mobilevr="false"
-		havevrimage.no-mobilevr="true" thumburl="panos/04.tiles/thumb.jpg" lat="18.48768056"
-		lng="-69.96391389" alt="24.29" heading="0.0" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
+	<scene name="scene_04" title="04" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/04.tiles/thumb.jpg" lat="18.48768056" lng="-69.96391389" alt="24.29" heading="0.0" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
-			fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/04.tiles/preview.jpg" />
 
@@ -293,23 +169,17 @@
 			<cube url="panos/04.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_target" ath="4.712" atv="14.086"
-			linkedscene="scene_05" linkedscene_hoffset="0.0"/>
-		<hotspot name="spot2" style="skin_target" ath="-142.757" atv="8.529"
-			linkedscene="scene_03-01" linkedscene_lookat="-22.36,-1.27,120.0" />
-		<hotspot name="spot3" style="skin_target" ath="151.508" atv="14.272"
-			linkedscene="scene_03" linkedscene_lookat="188.32,2.23,120.0" />
+		<hotspot name="spot1" style="skin_target" ath="4.712" atv="14.086" linkedscene="scene_05" linkedscene_hoffset="0.0"/>
+		<hotspot name="spot2" style="skin_target" ath="-142.757" atv="8.529" linkedscene="scene_03-01" linkedscene_lookat="-22.36,-1.27,120.0" />
+		<hotspot name="spot3" style="skin_target" ath="151.508" atv="14.272" linkedscene="scene_03" linkedscene_lookat="188.32,2.23,120.0" />
 
 	</scene>
 
-	<scene name="scene_05" title="05" onstart="" havevrimage.mobilevr="false"
-		havevrimage.no-mobilevr="true" thumburl="panos/05.tiles/thumb.jpg" lat="18.48772778"
-		lng="-69.96395278" alt="24.29" heading="0.0" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
+	<scene name="scene_05" title="05" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/05.tiles/thumb.jpg" lat="18.48772778" lng="-69.96395278" alt="24.29" heading="0.0" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
-			fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/05.tiles/preview.jpg" />
 
@@ -321,21 +191,16 @@
 			<cube url="panos/05.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_target" ath="3.909" atv="3.408"
-			linkedscene="scene_06" linkedscene_lookat="-26.21,-11.28,120.0" />
-		<hotspot name="spot2" style="skin_target" ath="-130.011" atv="22.180"
-			linkedscene="scene_04" linkedscene_lookat="-132.16,3.11,120.0" />
+		<hotspot name="spot1" style="skin_target" ath="3.909" atv="3.408" linkedscene="scene_06" linkedscene_lookat="-26.21,-11.28,120.0" />
+		<hotspot name="spot2" style="skin_target" ath="-130.011" atv="22.180" linkedscene="scene_04" linkedscene_lookat="-132.16,3.11,120.0" />
 
 	</scene>
 
-	<scene name="scene_06" title="06" onstart="" havevrimage.mobilevr="false"
-		havevrimage.no-mobilevr="true" thumburl="panos/06.tiles/thumb.jpg" lat="18.48774167"
-		lng="-69.96414444" alt="22.69" heading="0.0" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
+	<scene name="scene_06" title="06" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/06.tiles/thumb.jpg" lat="18.48774167" lng="-69.96414444" alt="22.69" heading="0.0" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
-			fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/06.tiles/preview.jpg" />
 
@@ -347,21 +212,16 @@
 			<cube url="panos/06.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_target" ath="2.377" atv="2.662"
-			linkedscene="scene_07" linkedscene_lookat="-115.19,-2.29,120.0" />
-		<hotspot name="spot2" style="skin_target" ath="96.759" atv="12.716"
-			linkedscene="scene_05" linkedscene_lookat="-167.93,-6.2,120.0" />
+		<hotspot name="spot1" style="skin_target" ath="2.377" atv="2.662" linkedscene="scene_07" linkedscene_lookat="-115.19,-2.29,120.0" />
+		<hotspot name="spot2" style="skin_target" ath="96.759" atv="12.716" linkedscene="scene_05" linkedscene_lookat="-167.93,-6.2,120.0" />
 
 	</scene>
 
-	<scene name="scene_07" title="07" onstart="" havevrimage.mobilevr="false"
-		havevrimage.no-mobilevr="true" thumburl="panos/07.tiles/thumb.jpg" lat="18.48780000"
-		lng="-69.96413056" alt="32.29" heading="0.0" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
+	<scene name="scene_07" title="07" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/07.tiles/thumb.jpg" lat="" lng="" alt="" heading="" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
-			fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/07.tiles/preview.jpg" />
 
@@ -373,27 +233,19 @@
 			<cube url="panos/07.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_target" ath="-161.625" atv="7.582"
-			linkedscene="scene_08" linkedscene_lookat="-166.64,-12.82,120.0" />
-		<hotspot name="spot2" style="skin_target" ath="-10.974" atv="5.757"
-			linkedscene="scene_09" linkedscene_lookat="-51.58,0.32,120.0" />
-		<hotspot name="spot3" style="skin_target" ath="92.939" atv="8.750"
-			linkedscene="scene_06" linkedscene_lookat="92.960,8.667,120.0" />
-		<hotspot name="spot4" style="skin_target" ath="160.391" atv="6.746"
-			linkedscene="scene_10" linkedscene_lookat="12.73,-7.44,124.85" />
-		<!-- <hotspot name="spot5" style="skin_target" ath="-68.767" atv="7.275"
-			linkedscene="scene_13" linkedscene_lookat="-387.78,-11.71,120.0" /> -->
+		<hotspot name="spot1" style="skin_target" ath="-161.625" atv="7.582" linkedscene="scene_08" linkedscene_lookat="-166.64,-12.82,120.0" />
+		<hotspot name="spot2" style="skin_target" ath="-10.974" atv="5.757" linkedscene="scene_09" linkedscene_lookat="-51.58,0.32,120.0" />
+		<hotspot name="spot3" style="skin_target" ath="92.939" atv="8.750" linkedscene="scene_06" linkedscene_lookat="92.960,8.667,120.0" />
+		<hotspot name="spot4" style="skin_target" ath="160.391" atv="6.746" linkedscene="scene_10" linkedscene_lookat="12.73,-7.44,124.85" />
+		<hotspot name="spot5" style="skin_target" ath="-68.767" atv="7.275" linkedscene="scene_14" linkedscene_lookat="140.93902053,-10.06840505,120.0" />
 
 	</scene>
 
-	<scene name="scene_08" title="08" onstart="" havevrimage.mobilevr="false"
-		havevrimage.no-mobilevr="true" thumburl="panos/08.tiles/thumb.jpg" lat="18.48781667"
-		lng="-69.96420833" alt="25.69" heading="0.0" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
+	<scene name="scene_08" title="08" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/08.tiles/thumb.jpg" lat="" lng="" alt="" heading="" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
-			fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/08.tiles/preview.jpg" />
 
@@ -405,24 +257,17 @@
 			<cube url="panos/08.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_target" ath="20.658" atv="7.381"
-			linkedscene="scene_07" linkedscene_lookat="40.73,0.11,120.0" />
-		<hotspot name="spot2" style="skin_target" ath="89.011" atv="10.739"
-			linkedscene="scene_10" linkedscene_lookat="-37.45,-1.34,120.0" />
-			<!-- <hotspot name="spot3" style="skin_target" ath="-23.776"
-			atv="3.651"
-			linkedscene="scene_13" linkedscene_lookat="5.22271913, -5.07959526 ,120.0" /> -->
+		<hotspot name="spot1" style="skin_target" ath="20.658" atv="7.381" linkedscene="scene_07" linkedscene_lookat="40.73,0.11,120.0" />
+		<hotspot name="spot2" style="skin_target" ath="89.011" atv="10.739" linkedscene="scene_10" linkedscene_lookat="-37.45,-1.34,120.0" />
+		<hotspot name="spot3" style="skin_target" ath="-23.776" atv="3.651" linkedscene="scene_14" linkedscene_lookat="-159.65127338, -4.58608884 ,120.0" />
 
 	</scene>
 
-	<scene name="scene_09" title="09" onstart="" havevrimage.mobilevr="false"
-		havevrimage.no-mobilevr="true" thumburl="panos/09.tiles/thumb.jpg" lat="18.48771667"
-		lng="-69.96405556" alt="28.69" heading="0.0" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
+	<scene name="scene_09" title="09" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/09.tiles/thumb.jpg" lat="" lng="" alt="" heading="" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
-			fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/09.tiles/preview.jpg" />
 
@@ -434,50 +279,20 @@
 			<cube url="panos/09.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_target" ath="129.348" atv="5.505"
-			linkedscene="scene_07" linkedscene_lookat="187.26,3.58,120.0" />
-		<hotspot name="spot2" style="skin_target" ath="-8.614" atv="-1.329"
-			linkedscene="scene_01" linkedscene_lookat="-138.35,-6.66,120.0" />
-		<!-- <hotspot name="info"
-			type="image"
-			url="recursos/punto_info.png"
-			ath="-134.9850237"
-			atv="-20.5752897"
-			scale="1"
-			depth="1000"
-			rx="0" ry="0" rz="0"
-			ox="0.0" oy="0.0"
-			tx="0" ty="0" tz="0"
-			distorted="true"
-			onclick="tween(hotspot[image_text].alpha, 1, 0.5); set(hotspot[image_text].enabled, true);" />
-		<hotspot name="image_text"
-			type="image"
-			url="recursos/Informacion_provisional.png"
-			ath="-134.9850237"
-			atv="-20.5752897"
-			scale="0.53000000000000"
-			depth="1000"
-			rx="0" ry="0" rz="0"
-			ox="0.0" oy="0.0"
-			tx="0" ty="0" tz="0"
-			alpha="0"
-			enabled="false"
-			distorted="true"
-			onclick="tween(hotspot[image_text].alpha, 0, 0.5); set(hotspot[image_text].enabled, false);" /> -->
-		
-		<!-- <hotspot name="spot3" style="skin_target" ath="-173.770" atv="6.388"
-			linkedscene="scene_13" linkedscene_lookat="-97.59,-17.1,120.0" /> -->
+		<hotspot name="spot1" style="skin_target" ath="129.348" atv="5.505" linkedscene="scene_07" linkedscene_lookat="187.26,3.58,120.0" />
+		<hotspot name="spot2" style="skin_target" ath="-8.614" atv="-1.329" linkedscene="scene_01" linkedscene_lookat="-138.35,-6.66,120.0" />
+		<!-- <hotspot name="info" type="image" url="recursos/punto_info.png" ath="-134.9850237" atv="-20.5752897" scale="1" depth="1000" rx="0" ry="0" rz="0" ox="0.0" oy="0.0" tx="0" ty="0" tz="0" distorted="true" onclick="tween(hotspot[image_text].alpha, 1, 0.5); set(hotspot[image_text].enabled, true);" />
+		<hotspot name="image_text" type="image" url="recursos/Informacion_provisional.png" ath="-134.9850237" atv="-20.5752897" scale="0.53000000000000" depth="1000" rx="0" ry="0" rz="0" ox="0.0" oy="0.0" tx="0" ty="0" tz="0" alpha="0" enabled="false" distorted="true" onclick="tween(hotspot[image_text].alpha, 0, 0.5); set(hotspot[image_text].enabled, false);" /> -->
+
+		<hotspot name="spot3" style="skin_target" ath="-173.770" atv="6.388" linkedscene="scene_14" linkedscene_lookat="33.03639517,1.60545759,120.0" lat="" lng="" alt="" heading="" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3"/>
 
 	</scene>
 
-	<scene name="scene_10" title="10" onstart="" havevrimage.mobilevr="false"
-		havevrimage.no-mobilevr="true" thumburl="panos/10.tiles/thumb.jpg" lat="18.48778611"
-		lng="-69.96418056" alt="28.69" heading="0.0" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
+	<scene name="scene_10" title="10" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/10.tiles/thumb.jpg" lat="" lng="" alt="" heading="" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
-			fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/11.tiles/preview.jpg" />
 
@@ -489,23 +304,17 @@
 			<cube url="panos/10.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_target" ath="0.525" atv="7.953"
-			linkedscene="scene_11" linkedscene_lookat="28.45,-5.9,120.0" />
-		<hotspot name="spot2" style="skin_target" ath="115.730" atv="15.812"
-			linkedscene="scene_08" linkedscene_lookat="-72.78,-17.77,120.0" />
-		<hotspot name="spot3" style="skin_target" ath="-166.554" atv="8.726"
-			linkedscene="scene_07" linkedscene_lookat="-7.14,-3.01,120.0" />
+		<hotspot name="spot1" style="skin_target" ath="0.525" atv="7.953" linkedscene="scene_11" linkedscene_lookat="28.45,-5.9,120.0" />
+		<hotspot name="spot2" style="skin_target" ath="115.730" atv="15.812" linkedscene="scene_08" linkedscene_lookat="-72.78,-17.77,120.0" />
+		<hotspot name="spot3" style="skin_target" ath="-166.554" atv="8.726" linkedscene="scene_07" linkedscene_lookat="-7.14,-3.01,120.0" />
 
 	</scene>
 
-	<scene name="scene_11" title="11" onstart="" havevrimage.mobilevr="false"
-		havevrimage.no-mobilevr="true" thumburl="panos/11.tiles/thumb.jpg" lat="" lng="" alt=""
-		heading="" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
+	<scene name="scene_11" title="11" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/11.tiles/thumb.jpg" lat="" lng="" alt="" heading="" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
-			fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/11.tiles/preview.jpg" />
 
@@ -517,21 +326,16 @@
 			<cube url="panos/11.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_target" ath="-8.435" atv="11.070"
-			linkedscene="scene_12" linkedscene_lookat="166.03,-15.16,120.0" />
-		<hotspot name="spot2" style="skin_target" ath="-155.116" atv="-1.357"
-			linkedscene="scene_10" linkedscene_lookat="-148.69,-3.35,120.0" />
+		<hotspot name="spot1" style="skin_target" ath="-8.435" atv="11.070" linkedscene="scene_12" linkedscene_lookat="166.03,-15.16,120.0" />
+		<hotspot name="spot2" style="skin_target" ath="-155.116" atv="-1.357" linkedscene="scene_10" linkedscene_lookat="-148.69,-3.35,120.0" />
 
 	</scene>
 
-	<scene name="scene_12" title="12" onstart="" havevrimage.mobilevr="false"
-		havevrimage.no-mobilevr="true" thumburl="panos/12.tiles/thumb.jpg" lat="" lng="" alt=""
-		heading="" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
+	<scene name="scene_12" title="12" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/12.tiles/thumb.jpg" lat="" lng="" alt="" heading="" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
-			fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/12.tiles/preview.jpg" />
 
@@ -543,18 +347,14 @@
 			<cube url="panos/12.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_target" ath="-34.598" atv="-4.543"
-			linkedscene="scene_11" linkedscene_lookat="207.65,-8.76,120.0" />
+		<hotspot name="spot1" style="skin_target" ath="-34.598" atv="-4.543" linkedscene="scene_11" linkedscene_lookat="207.65,-8.76,120.0" />
 
 	</scene>
-	<!-- <scene name="scene_13" title="13" onstart="" havevrimage.mobilevr="false"
-		havevrimage.no-mobilevr="true" thumburl="panos/13.tiles/thumb.jpg" lat="" lng="" alt=""
-		heading="" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
+	<!-- <scene name="scene_13" title="13" onstart="" havevrimage.mobilevr="false" havevrimage.no-mobilevr="true" thumburl="panos/13.tiles/thumb.jpg" lat="" lng="" alt="" heading="" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
 
 		<control bouncinglimits="calc:image.cube ? true : false" />
 
-		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70"
-			fovmax="140" limitview="auto" />
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto" />
 
 		<preview url="panos/13.tiles/preview.jpg" />
 
@@ -566,17 +366,21 @@
 			<cube url="panos/13.tiles/vr/pano_%s.jpg" />
 		</image>
 
-		<hotspot name="spot1" style="skin_target" ath="70.852"
-			atv="12.365"
-			linkedscene="scene_09" linkedscene_lookat="72.74931862,4.24863753,120.0" />
-		<hotspot name="spot2" style="skin_target" ath="149.391"
-			atv="9.345"
-			linkedscene="scene_07" linkedscene_lookat="132.96,0.38,120.0" />
-		<hotspot name="spot3" style="skin_target" ath="-159.031"
-			atv="3.711"
-			linkedscene="scene_08" linkedscene_lookat="-200.37,-9.78,120.0" />
+		<hotspot name="spot1" style="skin_target" ath="70.852" atv="12.365" linkedscene="scene_09" linkedscene_lookat="72.74931862,4.24863753,120.0" />
+		<hotspot name="spot2" style="skin_target" ath="149.391" atv="9.345" linkedscene="scene_07" linkedscene_lookat="132.96,0.38,120.0" />
+		<hotspot name="spot3" style="skin_target" ath="-159.031" atv="3.711" linkedscene="scene_08" linkedscene_lookat="-200.37,-9.78,120.0" />
 
 	</scene> -->
-
+	<scene name="scene_14" title="14" onstart="" thumburl="panos/14.tiles/thumb.jpg" lat="" lng="" alt="" heading="" soundurl="%CURRENTXML%/audio/Gentle_Breeze.mp3">
+		<control bouncinglimits="calc:image.cube ? true : false"/>
+		<view hlookat="0.0" vlookat="0.0" fovtype="MFOV" fov="120" maxpixelzoom="2.0" fovmin="70" fovmax="140" limitview="auto"/>
+		<preview url="panos/14.tiles/preview.jpg"/>
+		<image>
+			<cube url="panos/14.tiles/%s/l%l/%v/l%l_%s_%v_%h.jpg" multires="512,768,1664"/>
+		</image>
+		<hotspot name="spot1" style="skin_target" ath="-100.6855872" atv="10.0001703" linkedscene="scene_09" linkedscene_lookat="-0.70798496,-5.88047182,120.0" />
+		<hotspot name="spot2" style="skin_target" ath="-26.9951118" atv="4.83405881195716" linkedscene="scene_07" linkedscene_lookat="132.96,0.38,120.0" />
+		<hotspot name="spot3" style="skin_target" ath="12.9723752" atv="5.1410108" linkedscene="scene_08" linkedscene_lookat="-200.37,-9.78,120.0" />
+	</scene>
 
 </krpano>
